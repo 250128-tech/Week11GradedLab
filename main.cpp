@@ -1,8 +1,5 @@
 //
-// Created by user on 11/26/2026.
-// This main branch is intentionally left blank.
-// Solutions are in other branches.
-// First Commit in 1:30PM.
+// Problem 3
 //
 
 #include <iostream>
