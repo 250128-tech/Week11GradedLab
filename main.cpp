@@ -1,14 +1,27 @@
 //
-// Created by user on 11/26/2026.
-// This main branch is intentionally left blank.
-// Solutions are in other branches.
-// First Commit in 1:30PM.
+// This is problem 2.
 //
 
 #include <iostream>
 using namespace std;
 
+int largestAltitude(const int gain[], int n);
+
 int main()
 {
+    int n; cin >> n;
+    const int constn = n;
+    int gain[constn];
+    for ( int i = 0; i < n; i++ )
+    {
+        int x; cin >> x;
+        gain[i] = x;
+    }
+    cout << largestAltitude(gain[],n);
     return 0;
+}
+
+int largestAltitude(const int gain[], int n)
+{
+
 }
