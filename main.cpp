@@ -1,37 +1,50 @@
 //
-// Problem 5
+// Problem 6
 //
 
 #include <iostream>
 using namespace std;
 
-int search(const int nums[], int n, int target);
+void duplicateZeros(int arr[], int n);
 
 int main()
 {
     int n; cin >> n;
     const int constN = n;
-    int nums[constN];
+    int arr[constN];
     for ( int i = 0; i < n; i++)
     {
         int x; cin >> x;
-        nums[i]=x;
+        arr[i] = x;
     }
-    int target; cin >> target;
-    cout << search ( nums,n,target);
+    duplicateZeros(arr,n);
+    for ( int i = 0; i < n; i++ )
+    {
+        cout << arr[i] << ' ';
+    }
     return 0;
 }
 
-int search(const int nums[], int n, int target)
+void duplicateZeros(int arr[], int n)
 {
-    int high = n - 1; int low = 0;
-    int indexTarget = -1;
-    while ( high >= low )
+    int cache1; int cache2;
+    for (int i = 0; i < n ; )
     {
-        int mid = ( high + low ) /2;
-        if ( nums[mid] == target ) { return mid; }
-        else if ( nums[mid] > target ) { high = mid - 1;}
-        else { low = mid + 1;}
+        if ( arr[i]==0)
+        {
+            int cache1;
+            int cache2;
+            cache1 = arr [ i + 1 ];
+            // got confused in this part
+            for ( int j = i+1; j < n; j++)
+            {
+                cache2 = arr [ j +  1];
+                arr [ j + 1 ] = cache1;
+                cache1 = cache2;
+            }
+            arr[i + 1] = 0;
+            i += 2;
+        }
+        else { i += 1; }
     }
-    return indexTarget;
 }
